@@ -1,0 +1,71 @@
+# September 24
+1 byte has 8 lines called bits
+_ _ _ _ _ _ _ _
+0,1    0 to 225
+      -128 to 127
+
+# Signed integer
+signed integer X 10 ^(signed integer)
+
+class(3L)
+class(3)
+class(253L)
+class(2229299229929292292929292929L)
+class(20000L)
+class(100000000L)
+class(300000000000000L)
+class(10000000000L)
+class(1000000000L)
+class(1000000001L)
+class(1000000010L)
+class(9999999999L)
+
+How many bits are involved in storing an integer?
+
+1.2e15
+5.7e123222
+5.8e15000
+5.8e1500
+1.5e1000
+1.5e999
+1.5e100
+1.5e950
+1.5e500
+1.5e320
+1.5e300
+1.5e308
+1.5e309
+1.5e-500
+1.5e-100
+1.5e-200
+-1.5e-309
+0/0
+asin(100)
+sqrt(-5)
+sqrt(-5+0i)
+2^(32) -- number of characters we can encode with 32 bits
+iconvlist()
+
+numToText(4,EnglishNumbers)
+lang[num+1]
+TextToNum("zwolf",German)
+lang==word
+
+EnglishNumbers <-  c("zero"=0,"one"=1, "two"=2, "three"=3, "four"=4, "five"=5)
+EnglishNumbers == "three"
+which(EnglishNumbers == "four")-1
+wordToNum <- function(lang,word) which(lang == word)-1
+EnglishNumbers <- c("pi"=3.14)
+EnglishNumbers["pi"]
+
+DTK_List <- c("aardvark", "apple", "arc", "ark", "awkward", "chill", "drive", "giant", "happy", "intoxicated", 
+                 "magic", "picnic", "pizza", "pokeman", "sober", "stone", 
+                 "study", "yeezus", "zoo", "zebra", "zulu", "zigzag")
+
+anotherList <- c("advance", "add", "adverse", "assualt", "bro", "big", "category", "derive", "enough", "fat", "furious", 
+                 "frustrated", "hilarious", "hippo", "judge", "jury", "love", "monetary", "never", "zamboni") 
+
+DTK_List %in% another list
+
+unique(c(DTK,another))
+??unique

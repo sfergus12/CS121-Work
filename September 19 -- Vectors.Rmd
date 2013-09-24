@@ -1,0 +1,26 @@
+September 19
+
+Vectors
+x=17
+x[1]
+numeric(7)
+character(7)
+logical(7)
+logical(0)
+x<-c(17,23)
+length(x)
+w<-c(94,x,x)
+v<-c(w,x,w)
+c(x,"hello")
+class(x)
+class(c(x))
+
+as.character(TRUE)
+as.character("hello")
+as.character(13)
+as.character(TRUE)
+as.character(*)
+
+load(url("http://dtkaplan.github.io/ScientificComputing/Resources/ListOfCities.RData"))
+
+Benford's Law-- what does it say?? How can we extract the leading digit from each of these numbers?
