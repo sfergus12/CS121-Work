@@ -1,0 +1,16 @@
+subtract the previous from current
+we have indexing. 
+how can i make an index of the current nad previous
+
+all except the first one. indexes: start with 2-5. 
+index of 2-5 
+ins<- 2:5
+to index your vector: ins -1
+(1:4)
+
+
+
+
+
+
+each item plays a role as a previous and current item

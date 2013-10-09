@@ -1,0 +1,74 @@
+October 1 2013
+
+## Reverser
+
+```{r}
+reverser<-function(x){return(
+  rev(strsplit(x, split="")[[1]][1:nchar(x)]))  
+}
+reverser<-function(x){
+  a<-strsplit(x, split="")[[1]]
+  b<-a[rev(1:nchar(x))]
+  paste(b, collapse="")}
+```
+
+```{r}
+reverser("hello")
+reverser("sinta")
+reverser("kayak")
+reverser("palindromes")
+reverser("tattarrattat")
+reverser("malayalam")
+```
+
+Test Statements:
+```{r}
+# Test statement here. Should return TRUE or FALSE
+```
+
+
+## Scrambler
+
+```{r}
+scrambler<-function(x){return(
+  sample(strsplit(x, split="")[[1]][1:nchar(x)]))
+                       }
+```
+
+```{r}
+scrambler("hello")
+scrambler("sinta")
+```
+
+## Vowel Bleeper
+
+```{r}
+vowelbleeper<-function(x){return(gsub("[aeiou]","*",(strsplit(x, split="")[[1]][1:nchar(x)])))}
+```
+
+```{r}
+vowelbleeper("water")
+```
+
+## L33T
+
+```{r}
+L33T<-function(v){
+  w<-gsub("[e]", "3",v)
+  x<-gsub("[g]", "9", w)
+  y<-gsub("[o]", "0", x)
+  z<-gsub("[s]", "5", y)
+  a<-gsub("[l]", "1", z)
+  b<-gsub("[t]", "7", a)
+  c<-gsub("[b]", "6", b)
+  return(c)
+  }
+```
+
+```{r}
+L33T("goes")
+L33T("lose")
+L33T("togs")
+L33T("bog")
+```
+
