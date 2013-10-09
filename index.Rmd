@@ -1,8 +1,10 @@
-# Hello World
+# Sinta Fergus's Computation Page
 
-This is the front page of my web site.
+I'm a 2nd-year student at [Macalester College](www.macalester.edu) majoring in Neuroscience.
 
-Now edited. AGAIN. and again, sigh.
+As part of that major, I'm also studying Computer Science.  This is the front page for my Scientific Programming course, [COMP121] (http://dtkaplan.github.io/ScientificComputing/).
 
-Why the siggh?  Isn't it working, Dorothy?
+Here are some the projects I've been working on ...
+
+
 
