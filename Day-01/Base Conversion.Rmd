@@ -10,3 +10,6 @@ z <- (z-r) / b
 if (z==0) break 
 ```
 
+```{r}
+toBase (Z,)
+```

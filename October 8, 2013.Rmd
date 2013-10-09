@@ -116,3 +116,4 @@ myUnique <- function(v) {
 ```{r}
 myUnique(c("dog", "ant", "bee", "ant", "cat"))
 ```
+
