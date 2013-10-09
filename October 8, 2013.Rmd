@@ -1,0 +1,118 @@
+October 8, 2013
+
+```{r}
+mySum<- function(v){
+  # set up state
+  repeat{
+    # update state
+    # terminate? Am I done?
+  }
+  return(sofar)
+}
+```
+
+```{r}
+mySum<- function(v){
+  sofar <- 0
+  k <- 1
+  repeat{
+    sofar <- sofar + v[k]
+    k <- k + 1
+    if (k== (length(v)+1)) break
+  }
+  return(sofar)
+}
+```
+
+```{r}
+mySum(1:10)
+```
+
+
+````{r}
+mySumWhile <- function(v){
+  
+  sofar <- 0
+  k <- 1
+  
+  while( k !=(length(v)+1) ){
+    sofar <- sofar + v[k]
+    k <- k+1
+    
+  }
+  
+  return(sofar)
+}
+```
+
+```{r}
+mySumWhile(1:10)
+```
+
+```{r}
+mySumFor <- function(v){
+  sofar <- 0
+  k <- 1
+  for(k in 1:length(v)){
+  sofar <- sofar + v[k]
+  }
+  return(sofar) 
+}
+```
+
+```{r}
+mySumFor(1:10)
+```
+
+```{r}
+myRunningSum <- function(v){
+  sofar <- 0
+  res <- c()
+  for (k in 1:length(v)){
+    sofar <- sofar + v[k]
+    res <- c(res, sofar)
+  }
+  return(res)
+}
+```
+
+```{r}
+myRunningSum(1:10)
+myRunningSum(c(5,4,2,10))
+```
+
+```{r}
+myRunningSum <- function(v){
+  sofar <- 0
+  res <- c()
+  for (k in 1:length(v)){
+    sofar <- sofar + v[k]
+    res <- c(sofar, res)
+  }
+  return(res)
+}
+```
+
+```{r}
+myRunningSum(1:10)
+myRunningSum(c(5,4,2,10))
+```
+
+```{r}
+myUnique <- function(v) {
+  # set up state
+  already <- c()
+  for (k in v) {
+    if(k %in% already) {# It's already in it
+      already <- c(already, "***")
+   } else  { # a new one!
+    already <- c(already,k)
+  }
+    }
+  return(already)
+  }
+```
+
+```{r}
+myUnique(c("dog", "ant", "bee", "ant", "cat"))
+```

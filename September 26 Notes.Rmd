@@ -1,0 +1,182 @@
+# September 26 Notes
+
+We have:
+numeric
+logical 
+character
+function
+vector
+lists
+name(object)
+
+class(class(sin))
+[1] "character"
+
+class(sin)
+[1] "function"
+
+as.character(3)
+[1] "3"
+
+as.numeric("four")
+[1] NA
+Warning message:
+NAs introduced by coercion 
+
+3 == "dog"
+[1] FALSE
+
+3 == 2
+[1] FALSE
+
+"TRUE" == TRUE
+[1] TRUE
+
+"TRUE" == FALSE
+[1] FALSE
+
+"TRUE" == T
+[1] TRUE
+
+== always returns a logical, no matter the input
+
+
+seq() numeric in; numeric out
+
+seq("a","z")
+Error in from:to : NA/NaN argument
+In addition: Warning messages:
+1: In seq.default("a", "z") : NAs introduced by coercion
+2: In seq.default("a", "z") : NAs introduced by coercion
+
+all("for one")
+[1] NA
+Warning message:
+In all("for one") : coercing argument of type 'character' to logical
+
+
+[ ] takes two inputs: vector or a list and an index
+
+v[ v<5 ]
+numeric(0)
+
+Fred <- c(7,5,6)
+
+
+An assignable: you can assign subsets inside vectors
+
+strsplit("What kind of thing?", "n")
+[[1]]
+[1] "What ki"  "d of thi" "g?"    
+
+strsplit(c("No n's this", "What kind of thing?"), "n")
+[[1]]
+[1] "No "     "'s this"
+
+[[2]]
+[1] "What ki"  "d of thi" "g?"      
+
+fred <- list("Matrix", c(1,2,3), FALSE)
+[[1]]
+[1] "Matrix"
+
+[[2]]
+[1] 1 2 3
+
+[[3]]
+[1] FALSE
+
+fred[[3]]
+[1] FALSE
+
+fred[3]
+[[1]]
+[1] FALSE
+
+fred[10] <- "ten"
+fred
+[[1]]
+[1] "Matrix"
+
+[[2]]
+[1] 1 2 3
+
+[[3]]
+[1] FALSE
+
+[[4]]
+NULL
+
+[[5]]
+NULL
+
+[[6]]
+NULL
+
+[[7]]
+NULL
+
+[[8]]
+NULL
+
+[[9]]
+NULL
+
+[[10]]
+[1] "ten"
+
+fred <- list(hamline="Matrix", carleton=c(1,2,3), people=FALSE)
+fred
+$hamline
+[1] "Matrix"
+
+$carleton
+[1] 1 2 3
+
+$people
+[1] FALSE
+
+fred <- list(hamline="Matrix", carleton=c(a=1,b=2,c=3), people=FALSE)
+fred[["carleton"]]
+a b c 
+1 2 3 
+
+fred[["carleton"]]['c']
+c 
+3
+
+fred[["carleton"]][['c']]
+[1] 3
+
+
+grepl("b",c("becomes","ages"))
+[1]  TRUE FALSE
+
+v <- c("becomes","ages")
+gsub("[aeiou]","*****",v)
+[1] "b*****c*****m*****s" "*****g*****s"  
+
+grepl("[bs]",v)
+[1] TRUE TRUE
+
+grepl("^[b],*[s]^",v)
+[1] FALSE FALSE
+
+grepl("^[b],*[s]$",v)
+
+grepl("^b,q..$",v)
+
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+
+class(words)
+
+length(words)
+
+words[grepl("^b.q...$",words)]
+[1] "buqsha"
+
+words[grepl("^a..i....$",words)]
+
+length(words)
+
+
