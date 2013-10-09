@@ -1,10 +1,11 @@
 # Sinta Fergus's Computation Page
 
-I'm a 2nd-year student at [Macalester College](www.macalester.edu) majoring in Neuroscience.
+I am a 2nd-year student at [Macalester College] (http://www.macalester.edu) majoring in Neuroscience.
 
-As part of that major, I'm also studying Computer Science.  This is the front page for my Scientific Programming course, [COMP121] (http://dtkaplan.github.io/ScientificComputing/).
+As a Neuroscience major, I am required to take a computer science course.  This is the front page for my Scientific Programming course, [COMP121] (http://dtkaplan.github.io/ScientificComputing/).
 
-Here are some the projects I've been working on ...
+Attached below are links to some of the projects I have worked on throughout the duration of this course.
+
 
 
 
