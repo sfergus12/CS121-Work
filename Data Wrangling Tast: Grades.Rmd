@@ -1,0 +1,13 @@
+# Data Wrangling Task: Grades
+
+## To join grades and gradepoints
+-use join
+-or use table
+
+## Operations
+-group(ddply)
+-mutate
+-subset
+-join
+
+## Task

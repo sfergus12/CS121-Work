@@ -1,0 +1,73 @@
+# String Transformer Functions
+
+
+## Reverser
+
+```{r}
+reverser<-function(x){return(
+  rev(strsplit(x, split="")[[1]][1:nchar(x)]))  
+}
+reverser<-function(x){
+  a<-strsplit(x, split="")[[1]]
+  b<-a[rev(1:nchar(x))]
+  paste(b, collapse="")}
+```
+
+```{r}
+reverser("hello")
+reverser("sinta")
+reverser("kayak")
+reverser("palindromes")
+reverser("tattarrattat")
+reverser("malayalam")
+```
+
+Test Statements:
+```{r}
+# Test statement here. Should return TRUE or FALSE
+```
+
+
+## Scrambler
+
+```{r}
+scrambler<-function(x){return(
+  sample(strsplit(x, split="")[[1]][1:nchar(x)]))
+                       }
+```
+
+```{r}
+scrambler("hello")
+scrambler("sinta")
+```
+
+## Vowel Bleeper
+
+```{r}
+vowelbleeper<-function(x){return(gsub("[aeiou]","*",(strsplit(x, split="")[[1]][1:nchar(x)])))}
+```
+
+```{r}
+vowelbleeper("water")
+```
+
+## L33T
+
+```{r}
+L33tOnOneString<- function(input) {
+sub <- chartr("e","3",input)
+sub2 <- chartr("o","0",sub)
+sub3 <- chartr("s","5",sub2)
+sub4 <- chartr("g","9",sub3)
+return(sub4)
+}
+
+L33tOnOneString("go")
+
+
+L33t<- function(input) {
+  sapply(input, FUN=L33tOnOneString)
+}
+
+L33t(c("go","pose"))
+```

@@ -1,0 +1,36 @@
+# Interacting with Loops
+
+
+```{r}
+blastoffFor <- function(time){
+              for (k in length(time):1)
+              cat(k,"")
+              Sys.sleep(1)
+              k <- k-1
+            
+            Sys.sleep(1)
+            cat("Blastoff!")
+}
+blastoffFor(5)
+```
+
+```{r}
+getData <- function(N) {
+  readline("Press Enter when you are ready:")
+  result <- rep(0, N)
+  for( k in 1:N) {
+    Sys.sleep(runif(1,min=1,max=5))
+    before <- Sys.time()
+    readline("Press Enter:")
+    after <- Sys.time()
+  delay <- as.numeric(after-before)
+    cat(rep("\n",20))
+    result[k] <- delay
+ 
+    }
+  return(result)
+  }
+
+
+SPF <- getData(5)
+```
