@@ -1,0 +1,39 @@
+# COMP 121 Programming Task
+
+```{r}
+require(mosaic)
+finalData <- fetchData("COMP121/word-hints.R")
+```
+
+## Letter Proportion Task
+```{r}
+letterProportion <- function(x){
+  a <- unlist(strsplit(x,""))
+  b <- table(a)
+  c <- tolower(b)
+  d <- nchar(x)
+  output <- c / d
+  return(output) 
+}
+```
+
+## Frequency Compare Task
+```{r}
+freqCompare <- function(output, language){
+  letterStats <- table(output)
+  languageStats <- table(language)
+  diff <- letterStats - languageStats
+  chisq <- (diff^2) / languageStats
+  return(chisq)
+}
+  
+```
+
+## Which Language Task
+```{r}
+whichLanguage <- function(x){
+  letter <- table(freqCompare)
+  smallest <- letter(min)
+  return(smallest)
+  }
+```
