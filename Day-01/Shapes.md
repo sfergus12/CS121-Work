@@ -1,6 +1,0 @@
-plot (1:2,type="n",xlim=c(1,100),ylim=c(1,100),xlab="",ylab="")
-angles<-seq(0,2*pi,length=1000)
-polygon(50+25*cos(angles),50+25*sin(angles),col="#99CCFF50",border="NA")
-polygon(25+18*cos(angles),67+28*sin(angles),col="#CC99FF50",border="NA")
-polygon(c(15,43,43,14),c(38,38,70,70),col="#33CC3350",border="NA")
-polygon(c(27,43,43,27),c(20,20,30,30),col="#FF3300",border="#003300")
