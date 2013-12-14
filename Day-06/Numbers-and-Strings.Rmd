@@ -1,0 +1,67 @@
+Numbers and Strings
+================
+  
+## Basic Statistics
+```{r}
+outlier <- function(x){
+    q <- quantile(x,probs=c(0.25,0.75))
+    width <- 1.5*(q[[2]]-q[[1]])
+    high <- width + q[[2]]
+    low <- q[[1]] - width
+    return(x[(x<low)|(x>high)])
+}
+outlier(c(1,2,3,4,22))
+outlier(c(75,76,77,78,77,77,73,76,1,300))
+```
+
+```{r}
+outlier <- function(x){
+    q <- quantile(x,probs=c(0.25,0.75))
+    width <- 1.5*(q[[2]]-q[[1]])
+    high <- width + q[[2]]
+    low <- q[[1]] - width
+    out<-c()
+    for(k in 1:length(x)){
+      out<-c(out,x[k]>high|x[k]<low)
+      }
+    return(out)
+}
+outlier(c(1,2,3,4,22))
+outlier(c(75,76,77,78,77,77,73,76,1,300))
+
+```
+
+## Numbers and Languages
+```{r}
+English <- c("zero","one","two","three","four","five","six","seven","eight","nine")
+Spanish <- c("cero","uno","dos","tres","cuatro","cinco","seis","siete","ocho","nueve")
+digitToWord <- function(n,language){
+     return(language[n+1])
+ }
+digitToWord(4,English)
+digitToWord(7,Spanish)
+`````````````
+
+## Help for Crossword Puzzles
+```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+
+lettersMatch <- function(x){
+  a <- grepl(x,words)
+  return(words[a])
+}
+
+lettersMatch("^.t..r..$")
+```
+## Have your pi two ways
+```{r}
+piSeries <- function(n){
+  state <- 0
+  for(k in 1:length(n)){
+    result <- ((-1)^(k+1))/(2*k-1)
+    state <- state + result
+  }
+  return(state*4)
+}
+piSeries(1:10000)
+```

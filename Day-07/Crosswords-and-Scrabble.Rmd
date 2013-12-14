@@ -1,0 +1,247 @@
+Crosswords-and-Scrabble
+======================
+
+```{r}
+words <- readLines(url("http://dtkaplan.github.io/ScientificComputing/Syllabus/Daily/Day-07/word_list_moby_crossword-flat/word_list_moby_crossword.flat.txt"))
+```
+## Summarizing the List
+#### Report of Word Lengths
+(Slow version)
+```{r eval=FALSE}
+wordLength <- function(x){
+  list<-c()
+  a <- sapply(words,nchar)
+  for(k in 1:length(words)){
+    list<- c(list,a[[k]] == x)
+    }
+  return(sum(list))
+  }
+wordLength(3)
+```
+(Fast version)  
+```{r}  
+wordLength <- function(x){
+  list<-c()
+  a <- sapply(words,nchar)
+  for(k in 1:length(words)){
+    if(a[[k]]==x){list<-c(list,a[[k]])}
+    else{}
+    }
+  return(length(list))
+  }  
+```
+```{r}
+## 1
+wordLength(1)
+## 2
+wordLength(2)
+## 3
+wordLength(3)
+## 4
+wordLength(4)
+## 5
+wordLength(5)
+## 6
+wordLength(6)
+## 7
+wordLength(7)
+## 8
+wordLength(8)
+## 9
+wordLength(9)
+## 10
+wordLength(10)
+## 11
+wordLength(11)
+## 12
+wordLength(12)
+## 13
+wordLength(13)
+## 14
+wordLength(14)
+## 15
+wordLength(15)
+## 16
+wordLength(16)
+## 17
+wordLength(17)
+## 18
+wordLength(18)
+## 19
+wordLength(19)
+## 20
+wordLength(20)
+## 21
+wordLength(21)
+## 22
+wordLength(22)
+```
+
+#### 100 Longest Words
+Unfortunately, there are not 100 longest words.  There are 204 of length 17 and above, or else 72 of 18 and above.
+```{r}
+wordList <- function(x){
+  list<-c()
+  a <- sapply(words,nchar)
+  for(k in 1:length(words)){
+    if(a[[k]]==x){list<-c(list,words[k])}
+    else{}
+    }
+  return(list)
+  } 
+hunWords<-c(wordList(21),wordList(20),wordList(19),wordList(18),wordList(17))
+```
+```{r}
+length(hunWords)
+hunWords
+
+```
+
+#### Number of Words Beginning with Each Letter
+```{r}
+## A
+length(words[grepl("^a",words)==TRUE])
+## B
+length(words[grepl("^b",words)==TRUE])
+## C
+length(words[grepl("^c",words)==TRUE])
+## D
+length(words[grepl("^d",words)==TRUE])
+## E
+length(words[grepl("^e",words)==TRUE])
+## F
+length(words[grepl("^f",words)==TRUE])
+## G
+length(words[grepl("^g",words)==TRUE])
+## H
+length(words[grepl("^h",words)==TRUE])
+## I
+length(words[grepl("^i",words)==TRUE])
+## J
+length(words[grepl("^j",words)==TRUE])
+## K
+length(words[grepl("^k",words)==TRUE])
+## L
+length(words[grepl("^l",words)==TRUE])
+## M
+length(words[grepl("^m",words)==TRUE])
+## N
+length(words[grepl("^n",words)==TRUE])
+## O
+length(words[grepl("^o",words)==TRUE])
+## P
+length(words[grepl("^p",words)==TRUE])
+## Q
+length(words[grepl("^q",words)==TRUE])
+## R
+length(words[grepl("^r",words)==TRUE])
+## S
+length(words[grepl("^s",words)==TRUE])
+## T
+length(words[grepl("^t",words)==TRUE])
+## U
+length(words[grepl("^u",words)==TRUE])
+## V
+length(words[grepl("^v",words)==TRUE])
+## W
+length(words[grepl("^w",words)==TRUE])
+## X
+length(words[grepl("^x",words)==TRUE])
+## Y
+length(words[grepl("^y",words)==TRUE])
+## Z
+length(words[grepl("^z",words)==TRUE])
+```
+
+#### "Q" Without "U"
+```{r}
+noU<-words[grepl("q[^u]",words)==TRUE]
+noU
+```
+
+## Crossword Helper
+```{r}
+crossword <- function(x){
+  a <- grepl(x,words)
+  return(words[a])
+}
+
+crossword("^.t..r..$")
+```
+
+## A Better Crossword Helper
+
+```{r}
+crosswordPattern<-function(v,x){
+  a <- rep(".",x)
+  for(k in 1:length(v)){
+    a[v[[k]]]=names(v)[k]
+  }
+  b<-c("^",a,"$")
+  c<-paste(b,collapse="")
+  d<-grepl(c,words)
+  return(words[d])
+}
+
+crosswordPattern(c(h=1,l=4,l=3),5)
+```
+#### Put into use:
+![Examle Crossword](https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=3c3fb89127&view=att&th=142b194abf4b0672&attid=0.1&disp=inline&realattid=f_hop82ihu0&safe=1&zw&saduie=AG9B_P95_kyWxuKUpv_AbSlETcxe&sadet=1386037999676&sads=RnB9xCOHrMW-1W9S9Ew4NgejqQA)
+
+1 Across
+```{r}
+crosswordPattern(c(l=1,v=3,a=4),4)
+```
+49 Across
+```{r}
+crosswordPattern(c(n=2,a=3,g=4),4)
+```
+57 Across
+```{r}
+crosswordPattern(c(e=1,a=3,n=4),4)
+```
+7 Down
+```{r}
+crosswordPattern(c(a=1,r=2,c=3),4)
+```
+9 Down
+```{r}
+crosswordPattern(c(m=1,a=2,r=3,a=5),5)
+```
+38 Down
+```{r}
+crosswordPattern(c(e=1,r=3),4)
+```
+51 Down
+```{r}
+crosswordPattern(c(g=1,l=2,a=3,d=4),5)
+```
+58 Down
+```{r}
+crosswordPattern(c(c=2,e=4),4)
+```
+
+## Scrabble
+I added an input x which dictates how many letters the desired word will be.
+```{r}
+scrabble<-function(v,x){
+  sub1<-words[grepl(v[1],words)==TRUE]
+  sub2<-sub1[grepl(v[2],sub1)==TRUE]
+  sub3<-sub2[grepl(v[3],sub2)==TRUE]
+  sub4<-sub3[grepl(v[4],sub3)==TRUE]
+  sub5<-sub4[grepl(v[5],sub4)==TRUE]
+  sub6<-sub5[grepl(v[6],sub5)==TRUE]
+  sub7<-sub6[grepl(v[7],sub6)==TRUE]
+  if(length(sub7)>10){return(sub7[1:10])}
+  else{a<-c(sub7,sub6,sub5,sub4)}
+  b <- sapply(a,nchar)
+  c <- as.data.frame(b,row.names = names(b))
+  d <- subset(c,b==x)
+  e <- row.names(d)
+  return(e[1:10])
+}
+
+scrabble(c("a","b","c","d","e","f","g"),7)
+scrabble(c("a","b","c","d","e","f","g"),8)
+scrabble(c("a","b","c","d","e","f","g"),9)
+```
