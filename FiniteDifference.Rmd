@@ -1,0 +1,44 @@
+# Computing Mathematical Derivatives
+
+## Task I
+
+My function is $f(x)(x^2 + x)$
+
+Here's the implementation in R:
+```{r}
+f <- function(x){(x^2) + x}
+
+Df <- D(cos(x)) ~ x)
+
+evalD <- function(f, x) {
+    h <- 1e-08  # 'Small h'
+    return((f(x + h) - f(x - h))/(2 * h))
+}
+
+i <- function(x){evalD(f,x)}
+j <- function(x){Df(x)}
+plotFun(i(x)~x, add=FALSE, xlim=range(-100000000, 100000000), ylim=NULL, col='red')
+plotFun(j(x)~x, add=TRUE, xlim=range(-100000000,100000000), ylim=NULL, col='blue')
+
+plotFun(i(x)-j(x)~x, add=FALSE,xlim=range(-100000000,100000000), ylim=NULL, col='blue' )
+f <- function(x){(x^2) + x}
+
+Df <- function(f,x) {
+      h <- 0.001
+      res <- (f(x+h)-f(x))/h
+      return(res)
+      }
+```
+
+## Task II
+
+```{r}
+evalD <- function(f, x) {
+    h <- 1e-08  # 'Small h'
+    return((f(x + h) - f(x - h))/(2 * h))
+}
+
+evalD <- function(f, x, h=1e-8) {
+    return((f(x + h) - f(x - h))/(2 * h))
+    }
+```
