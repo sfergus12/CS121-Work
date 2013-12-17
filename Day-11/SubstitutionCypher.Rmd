@@ -1,0 +1,47 @@
+# Substitution Cypher
+
+### Step 1: The Key
+```{r}
+key <- "zoo"
+TheKey <- function(L){which (L==letters)}
+paste(sapply(unlist(strsplit(key,split=NULL)),FUN=TheKey),collapse="")
+```
+
+
+### Step 2: The Cypher
+```{r}
+set.seed(paste(sapply(unlist(strsplit(key,split=NULL)),FUN=TheKey),collapse=""))
+characters<- c(letters, LETTERS,".",":",",",";",0:9)
+fromandto<-sample(characters)
+fromandto
+```
+### Step 3: Encryption
+```{r}
+CBCoutput<-chartr(paste(characters,collapse=""),paste(fromandto,collapse=""),"Messsage Encrypted")
+CBCoutput
+```
+### Step 4: Decryption
+```{r}
+decoded<-chartr(paste(fromandto,collapse=""),paste(characters,collapse=""),CBCoutput)
+decoded
+```
+
+## Mystery Novel
+Write a few paragraphs of a mystery novel — the part where your main character receives the Library of Congress code and an encypherd message. Show how the character uses R to decrypt the message. Have fun!
+
+
+```{r}
+paragraph<-chartr(paste(characters,collapse=""),paste(fromandto,collapse=“”),”As Jenny was searching for relevant clues for a current case she was working on, she stumbled upon a torn sheet of paper with the Library of Congress code and an encypherd message. At first she is frantic — she has no idea what this message could possibly be saying. It could be a crucial piece of information and it would be extremely unfortunate if she could not encrypt it. It then hits her — she may not be able to encrypt it alone, but with the helpful assistance of the programming language of R, she could easily write a code to encrypt this message. Jenny gets to work and after many hours, develops a successful code that reveals the true message of the encypherd message.”) 
+
+
+decoded<-chartr(paste(fromandto,collapse=""),paste(characters,collapse=""),paragraph)
+decoded
+```
+
+
+
+
+
+
+
+
